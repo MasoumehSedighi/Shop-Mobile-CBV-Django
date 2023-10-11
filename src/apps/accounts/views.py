@@ -22,7 +22,7 @@ class loginView(views.View):
             user = authenticate(request, email=email, password=password)
             if user is not None:
                 login(request, user)
-                redirect('product-list')
+                redirect('products:product-list')
             else:
                 return render(request, self.template_name, {'form':form})
         return render(request, self.template_name, {'form':form})   
